@@ -16,13 +16,13 @@ gpio.output(11,ledstat)
  
 def authenticate():
      
-    consumer_token = "4Wpzh5rJIKoblAg2cWOmZiZTm"#put your credentials here
-    consumer_secret = "rVlZ5dIcC9UWJev6REWhSkmpooEV1VIwjqKrFkGw6Ys4rTjsAQ"#
+    consumer_token = ""#put your credentials here
+    consumer_secret = ""#
  
     auth = tweepy.OAuthHandler(consumer_token,consumer_secret)
  
-    access_token = "2584643515-8cD4uTaDzujdTKzFadQa80nzV6A1XjH4VdlYj0u"#
-    access_token_secret = "VzR7QokQBCffkY3BRmSDwjkK4F4gsurV2ad8xXRu6LXqg"#
+    access_token = ""#
+    access_token_secret = ""#
  
     auth.set_access_token(access_token,access_token_secret)
  
