@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/ -->
+<html lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+<title>Raspberry Pi | Wiring | Special Pin Functions | Gordons Projects</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://projects.drogon.net/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://projects.drogon.net/wp-content/themes/weaver-ii/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<script type="text/javascript">var weaverIsMobile=false;var weaverIsSimMobile=false;var weaverIsStacked=false;var weaverThemeWidth=940;var weaverMenuThreshold=640;var weaverHideMenuBar=false;var weaverMobileDisabled=false;var weaverFlowToBottom=false;var weaverHideTooltip=false;var weaverUseSuperfish=false;</script>
+<link rel="alternate" type="application/rss+xml" title="Gordons Projects » Feed" href="https://projects.drogon.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="Gordons Projects » Comments Feed" href="https://projects.drogon.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Gordons Projects » Special Pin Functions Comments Feed" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/feed/">
+<link rel="stylesheet" id="weaverii-main-style-sheet-css" href="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="weaverii-mobile-style-sheet-css" href="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/style-mobile.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/jquery.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/anti-spam.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://projects.drogon.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://projects.drogon.net/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.0.1">
+<link rel="shortlink" href="https://projects.drogon.net/?p=176">
+
+<!-- This site is using Weaver II 2.1.12 (43) subtheme: White -->
+<style type="text/css">
+/* Weaver II styles - Version 43 */
+a {color:#0066CC;}
+a:visited {color:#743399;}
+a:hover {color:#FF4B33;}
+.entry-title a {color:#3366BB;}
+.entry-title a:visited {color:#3366BB;}
+.entry-meta a, .entry-utility a {color:#888888;}
+.entry-meta a:visited, .entry-utility a:visited {color:#888888;}
+.entry-meta a:hover, .entry-utility a:hover {color:#FF4B33;}
+.widget-area a {color:#0066CC;}
+.widget-area a:visited {color:#743399;}
+.widget-area a:hover {color:#FF4B33;}
+#wrapper, #branding, #colophon, .commentlist li.comment, #respond, #sidebar_primary,#sidebar_right,#sidebar_left,.sidebar_top,.sidebar_bottom,.sidebar_extra,#first,#second,#third,#fourth,.mobile_widget_area {-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;}
+#sidebar_wrap_right.right-1-col,#sidebar_wrap_right.right-2-col,#sidebar_wrap_right.right-2-col-bottom,
+#sidebar_wrap_left.left-1-col,#sidebar_wrap_left.left-2-col,#sidebar_wrap_left.left-2-col-bottom,#sidebar_wrap_left,#sidebar_wrap_right
+{-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;}
+.commentlist li.comment .comment-meta {-moz-border-radius-topleft: 7px; -moz-border-radius-topright: 7px;
+ -webkit-border-top-left-radius: 7px; -webkit-border-top-right-radius: 7px; border-top-left-radius: 7px; border-top-right-radius: 7px;}
+#access {-moz-border-radius-bottomleft: 7px; -moz-border-radius-bottomright: 7px;
+ -webkit-border-bottom-left-radius: 7px; -webkit-border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;}
+#access2 {-moz-border-radius-topleft: 7px; -moz-border-radius-topright: 7px;
+ -webkit-border-top-left-radius: 7px; -webkit-border-top-right-radius: 7px; border-top-left-radius: 7px; border-top-right-radius: 7px;}
+#content, #content .post{-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;}
+body {background-image: url(/wp-content/themes/weaver-ii/images/gr.png); background-attachment: scroll; background-repeat: repeat-x;}
+#wrapper{max-width:940px;}
+#wrapper {padding: 0px;}
+#sidebar_primary,.mobile_widget_area {background-color:#FCFCFC;}
+#sidebar_right {background-color:#FCFCFC;}
+#sidebar_left {background-color:#FCFCFC;}
+.sidebar_top,.sidebar_extra {background-color:#FCFCFC;}
+.sidebar_bottom {background-color:#FCFCFC;}
+#first,#second,#third,#fourth {background-color:transparent;}
+.widget {background-color:transparent;}
+#container_wrap.right-1-col{width:75.000%;} #sidebar_wrap_right.right-1-col{width:25.000%;}
+#container_wrap.right-2-col,#container_wrap.right-2-col-bottom{width:67.000%;} #sidebar_wrap_right.right-2-col,#sidebar_wrap_right.right-2-col-bottom{width:33.000%;}
+#container_wrap.left-1-col{width:75.000%;} #sidebar_wrap_left.left-1-col{width:25.000%;}
+#container_wrap.left-2-col,#container_wrap.left-2-col-bottom{width:67.000%;} #sidebar_wrap_left.left-2-col,#sidebar_wrap_left.left-2-col-bottom{width:33.000%;}
+#container_wrap{width:66.000%;} #sidebar_wrap_left{width:17.000%;} #sidebar_wrap_right{width:17.000%;}
+#sidebar_wrap_2_left_left, #sidebar_wrap_2_right_left {width:54.000%;margin-right:1%;}
+#sidebar_wrap_2_left_right, #sidebar_wrap_2_right_right {width:45.000%;}
+@media only screen and (max-width:640px) { /* header widget area mobile rules */
+} /* end mobile rules */
+#main {padding: 4px 0 0 0;}
+#site-description {font-size:200.000%;}
+.menu_bar a, .mobile_menu_bar a {font-weight:bold;}
+.menu_bar, .menu_bar a,.menu_bar a:visited,.mobile_menu_bar a {color:#000000;}
+.menu_bar li:hover > a, .menu_bar a:focus {background-color:#DDDDDD;}
+.menu_bar li:hover > a, .menu_bar a:focus {color:#444444;}
+.menu_bar ul ul a {background-color:#B8B8B8;}
+.menu_bar ul ul a {border: 1px solid #DDDDDD;}
+.menu_bar ul ul a,.menu_bar ul ul a:visited {color:#000000;}
+.menu_bar ul ul :hover > a {background-color:#DDDDDD;}
+.menu_bar ul ul :hover > a {color:#444444;}
+.menu_bar, .mobile_menu_bar, .menu-add {background-color:#FCFCFC;}
+.menu_bar, .mobile_menu_bar, .menu-add {border: 1px solid #DDDDDD; margin-top: 2px;margin-left:-1px;}
+.mobile-menu-link {border-color:#000000;}
+.widget-area .menu-vertical,.menu-vertical {clear:both;background-color:transparent;margin:0;width:100%;overflow:hidden;border-bottom:3px solid #000000;border-top:1px solid #000000;}
+.widget-area .menu-vertical ul, .menu-vertical ul {margin: 0; padding: 0; list-style-type: none;  list-style-image:none;font-family: inherit;}
+.widget-area .menu-vertical li a, .widget-area .menu-vertical a:visited, .menu-vertical li a, .menu-vertical a:visited {
+color: #000000;  background-color: #FCFCFC; display: block !important; padding: 5px 10px; text-decoration: none; border-top:2px solid #000000;}
+.widget-area .menu-vertical a:hover,.widget-area .menu-vertical a:focus, .menu-vertical a:hover,.menu-vertical a:focus {
+color: #444444; background-color: #DDDDDD;text-decoration: none;}
+.widget-area .menu-vertical ul ul li, .menu-vertical ul ul li { margin: 0; }
+.widget-area .menu-vertical ul ul a,.menu-vertical ul ul a {color: #000000; background-color: #FCFCFC;
+ display: block; padding: 4px 5px 4px 25px; text-decoration: none;border:0;
+ border-top:1px solid #000000;}
+.widget-area .menu-vertical ul ul a:hover,#wrap-header .menu-vertical ul ul a:hover,#wrap-header .menu-vertical ul a:hover {color: #444444; background-color: #DDDDDD; text-decoration: none;}
+.widget-area .menu-vertical ul ul ul a,.menu-vertical ul ul ul a {padding: 4px 5px 4px 35px;}
+.widget-area .menu-vertical ul ul ul a,.menu-vertical ul ul ul ul a {padding: 4px 5px 4px 45px;}
+.widget-area .menu-vertical ul ul ul ul a,.menu-vertical ul ul ul ul ul a {padding: 4px 5px 4px 55px;}
+.menu_bar .current_page_item > a, .menu_bar .current-menu-item > a, .menu_bar .current-cat > a, .menu_bar .current_page_ancestor > a,.menu_bar .current-category-ancestor > a, .menu_bar .current-menu-ancestor > a, .menu_bar .current-menu-parent > a, .menu_bar .current-category-parent > a,.menu-vertical .current_page_item > a, .menu-vertical .current-menu-item > a, .menu-vertical .current-cat > a, .menu-vertical .current_page_ancestor > a, .menu-vertical .current-category-ancestor > a, .menu-vertical .current-menu-ancestor > a, .menu-vertical .current-menu-parent > a, .menu-vertical .current-category-parent > a,.widget-area .menu-vertical .current_page_item > a, .widget-area .menu-vertical .current-menu-item > a, .widget-area .menu-vertical .current-cat > a, .widget-area .menu-vertical .current_page_ancestor > a {color:#00008F !important;}
+#content, .entry-content h1, .entry-content h2 {color:#444444;}
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6, #content dt, #content th,
+h1, h2, h3, h4, h5, h6,#author-info h2 {color:#3366BB;}
+#content h1.entry-title {color:#3366BB;}
+.commentlist li.comment, #respond {background-color:transparent;}
+#content table {border: 1px solid #e7e7e7;margin: 0 -1px 24px 0;text-align: left;width: 100%;}
+#content tr th, #content thead th {color: #888;font-size: 12px;font-weight: bold;line-height: 18px;padding: 9px 24px;}
+#content tr td {border-style:none; border-top: 1px solid #e7e7e7; padding: 6px 24px;}
+#content tr.odd td {background: #f2f7fc;}
+.wp-caption p.wp-caption-text, #content .gallery .gallery-caption,.entry-attachment .entry-caption {color:#333333;}
+#content img.size-full, #content img.size-large, #content img.size-medium, #content img.size-thumbnail, #content .attachment-thumbnail, #content .gallery img,#content .gallery-thumb img,.entry-attachment img, #content .wp-caption img, #content img.wp-post-image,#content img[class*="wp-image-"],#author-avatar img,img.avatar {background-color:transparent;}
+.home .sticky, #container.page-with-posts .sticky, #container.index-posts .sticky {background-color:#CFCFCF;}
+.entry-meta, .entry-content label, .entry-utility {color:#888888;}
+body {font-size:12px;}
+body {font-family:Arial,Helvetica,sans-serif;}
+h3#comments-title,h3#reply-title,.menu_bar,.mobile_menu_bar,
+#author-info,#infobar,#nav-above, #nav-below,#cancel-comment-reply-link,.form-allowed-tags,
+#site-info,#site-title,#wp-calendar,#comments-title,.comment-meta,.comment-body tr th,.comment-body thead th,
+.entry-content label,.entry-content tr th,.entry-content thead th,.entry-format,.entry-meta,.entry-title,
+.entry-utility,#respond label,.navigation,.page-title,.pingback p,.reply,.widget-title,
+.wp-caption-text,input[type=submit] {font-family:Arial,Helvetica,sans-serif;}
+body {background-color:#F5F5F5;}
+body {color:#212121;}
+#wrapper {background-color:#FCFCFC;}
+#main {background-color:#FCFCFC;}
+#container {background-color:transparent;}
+#content {background-color:#FCFCFC;}
+#content {border: 1px solid #DDDDDD; padding-left:15px; padding-top:10px; padding-right:15px;}
+#content .post,.post {background-color:transparent;}
+#branding {background-color:transparent;}
+#colophon {background-color:#FCFCFC;}
+hr {background-color:#000000;}
+.entry-meta {background-color:#DDDDDD;}
+.entry-meta {padding:4px 4px 4px 20px;}
+.entry-utility {background-color:#DDDDDD;}
+.entry-utility {padding:4px 4px 4px 20px;}
+input, textarea, ins, pre {background-color:#F0F0F0;}
+.widget {color:#666666;}
+.widget-title, .widget_search label, #wp-calendar caption {color: #222222;}
+#site-title a {color:#3366BB;}
+#site-description {color:#666666;}
+/* Weaver II Mobile Device Options */
+.weaver-any-mobile  #main a, .weaver-any-mobile  #mobile-widget-area a, .weaver-any-mobile  .sidebar_top a, .weaver-any-mobile  .sidebar_bottom a, .weaver-any-mobile  .sidebar_extra a {text-decoration: underline !important;}
+@media only screen and (max-width:768px) and (orientation:portrait) {body {padding: 0px !important;}}
+@media only screen and (max-width:640px) {
+#main a, #mobile-widget-area a, .sidebar_top a, .sidebar_bottom a, .sidebar_extra a{text-decoration: underline !important;}
+}
+@media only screen and (max-width: 580px) {
+}
+
+/* end Weaver II CSS */
+</style> <!-- end of main options style section -->
+
+
+<!--[if lte IE 8]>
+<style type="text/css" media="screen">
+#content img.size-thumbnail,#content img.size-medium,#content img.size-large,#content img.size-full,#content img.attachment-thumbnail,
+#content img.wp-post-image,img.avatar,.format-chat img.format-chat-icon,
+#wrapper,#branding,#colophon,#content, #content .post,
+#sidebar_primary,#sidebar_right,#sidebar_left,.sidebar_top,.sidebar_bottom,.sidebar_extra,
+#first,#second,#third,#fourth,
+#commentform input:focus,#commentform textarea:focus,#respond input#submit {
+		behavior: url(https://projects.drogon.net/wp-content/themes/weaver-ii/js/PIE/PIE.php) !important; position:relative;
+}
+</style>
+<![endif]-->
+
+<!-- End of Weaver II options -->
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+<!-- All in One SEO Pack 2.2.3.1 by Michael Torbert of Semper Fi Web Design[422,469] -->
+<meta name="description" content="Special functions applicable to some of the pins">
+
+<meta name="keywords" content="raspberry pi, pi,raspberry,wiringpi, functions">
+
+<link rel="canonical" href="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects.html">
+<!-- /all in one seo pack -->
+</head>
+
+<body class="page page-id-176 page-child parent-pageid-142 page-template-default single-author singular not-logged-in weaver-desktop weaver-mobile-smart-nostack">
+<a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#page-bottom" id="page-top">↓</a> <!-- add custom CSS to use this page-bottom link -->
+<div id="wrapper" class="hfeed">
+<div id="wrap-header">
+	<header id="branding" role="banner"><div id="branding-content">
+		<div id="site-logo"></div>
+		<div id="site-logo-link" onclick="location.href=&#39;https://projects.drogon.net/&#39;;"></div>
+
+		<div class="title-description title-description-xhtml">
+			<h1 id="site-title"><span><a href="https://projects.drogon.net/" title="Gordons Projects" rel="home">Gordons Projects</a></span></h1>
+			<h2 id="site-description"> Projects, Fun and Games from Gordon @ Drogon</h2>
+		</div>
+		<div id="header_image">
+                              <img src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/test.png" width="940" height="188" alt="Gordons Projects">
+        		</div><!-- #header_image -->
+	</div></header><!-- #branding-content, #branding -->
+<div id="wrap-bottom-menu">
+<div id="mobile-bottom-nav" class="mobile_menu_bar" style="padding: 5px 10px; clear: both; display: none;">
+	<div style="margin-bottom:20px;">
+<span class="mobile-home-link">
+	<a href="https://projects.drogon.net/" title="Gordons Projects" rel="home">Home</a></span>
+	<span class="mobile-menu-link"><a href="javascript:void(null);" onclick="weaverii_ToggleMenu(document.getElementById(&#39;nav-bottom-menu&#39;), this, &#39;Menu ↓&#39;, &#39;Menu ↑&#39;)">Menu ↓</a></span></div>
+</div>
+		<div class="skip-link"><a class="assistive-text" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#content" title="">Skip to primary content</a></div>
+			<div class="skip-link"><a class="assistive-text" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#sidebar_primary" title="">Skip to secondary content</a></div>
+				<div id="nav-bottom-menu" style="display: block;"><nav id="access" class="menu_bar" role="navigation">
+<div class="menu"><ul><li><a href="https://projects.drogon.net/">Home</a></li><li class="page_item page-item-6"><a href="https://projects.drogon.net/welcome/">Welcome</a></li><li class="page_item page-item-96 page_item_has_children current_page_ancestor"><a href="https://projects.drogon.net/raspberry-pi/" aria-haspopup="true">Raspberry Pi</a><ul class="children"><li class="page_item page-item-142 page_item_has_children current_page_ancestor current_page_parent"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/" aria-haspopup="true">WiringPi</a><ul class="children"><li class="page_item page-item-148"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/pins/">Pins</a></li><li class="page_item page-item-153"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/functions/">Functions (API)</a></li><li class="page_item page-item-606"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/the-gpio-utility/">The GPIO utility</a></li><li class="page_item page-item-171"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/">Download and Install</a></li><li class="page_item page-item-176 current_page_item"><a href="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects.html">Special Pin Functions</a></li><li class="page_item page-item-695"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/serial-library/">Serial Library</a></li><li class="page_item page-item-543"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/lcd-library/">LCD Library</a></li><li class="page_item page-item-782"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/software-pwm-library/">Software PWM Library</a></li><li class="page_item page-item-596"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/shift-library/">Shift Library</a></li><li class="page_item page-item-1246"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/spi-library/">SPI Library</a></li><li class="page_item page-item-1256"><a href="https://projects.drogon.net/raspberry-pi/wiringpi/i2c-library/">I2C Library</a></li></ul></li><li class="page_item page-item-939"><a href="https://projects.drogon.net/raspberry-pi/raspberry-ladder-software/">Raspberry Ladder Software</a></li><li class="page_item page-item-159"><a href="https://projects.drogon.net/raspberry-pi/examples/">WiringPi Examples</a></li><li class="page_item page-item-351 page_item_has_children"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/" aria-haspopup="true">GPIO Examples</a><ul class="children"><li class="page_item page-item-393 page_item_has_children"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/" aria-haspopup="true">Tux Crossing</a><ul class="children"><li class="page_item page-item-341"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/">1: A single LED</a></li><li class="page_item page-item-357"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/2-two-more-leds/">2: Two more LEDs</a></li><li class="page_item page-item-362"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/3-more-leds-and-a-button/">3: More LEDs and a Button</a></li><li class="page_item page-item-400"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/software/">Software</a></li></ul></li><li class="page_item page-item-420 page_item_has_children"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/ladder-game/" aria-haspopup="true">Ladder Game</a><ul class="children"><li class="page_item page-item-433"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/ladder-game/theory-of-operation/">Theory of Operation</a></li><li class="page_item page-item-472"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/ladder-game/software/">Software</a></li></ul></li><li class="page_item page-item-511"><a href="https://projects.drogon.net/raspberry-pi/gpio-examples/lcd-interface/">LCD Interface</a></li></ul></li><li class="page_item page-item-628"><a href="https://projects.drogon.net/raspberry-pi/wiringpiface/">WiringPiFace</a></li><li class="page_item page-item-225 page_item_has_children"><a href="https://projects.drogon.net/raspberry-pi/gertboard/" aria-haspopup="true">Gertboard</a><ul class="children"><li class="page_item page-item-277"><a href="https://projects.drogon.net/raspberry-pi/gertboard/arduino-ide-installation-isp/">Arduino IDE Installation</a></li><li class="page_item page-item-292"><a href="https://projects.drogon.net/raspberry-pi/gertboard/initial-setup-of-the-atmega/">Initial setup of the ATmega</a></li><li class="page_item page-item-688"><a href="https://projects.drogon.net/raspberry-pi/gertboard/using-the-arduino-ide/">Using the Arduino IDE with the Gertboard</a></li><li class="page_item page-item-332"><a href="https://projects.drogon.net/raspberry-pi/gertboard/gertboard-atmega-io-vs-arduino-pins/">Gertboard ATmega IO vs. Arduino Pins</a></li><li class="page_item page-item-809"><a href="https://projects.drogon.net/raspberry-pi/gertboard/analog-inout/">Analog In/Out</a></li></ul></li><li class="page_item page-item-1271 page_item_has_children"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/" aria-haspopup="true">Gertboard and WiringPi</a><ul class="children"><li class="page_item page-item-1278"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/blink/">Blink</a></li><li class="page_item page-item-1343"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/12-leds/">12 LEDs</a></li><li class="page_item page-item-1321"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/buttons/">Buttons</a></li><li class="page_item page-item-1335"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/connecting-to-the-gertboard/">Connecting to the Gertboard</a></li><li class="page_item page-item-1418"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/higher-current-drivers/">Higher Current Drivers</a></li><li class="page_item page-item-1430"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/on-board-spi-devices/">On-board SPI Devices</a></li><li class="page_item page-item-1587"><a href="https://projects.drogon.net/raspberry-pi/gertboard-and-wiringpi/analog-to-digital-to-analog/">Analog to Digital to Analog</a></li></ul></li><li class="page_item page-item-1674 page_item_has_children"><a href="https://projects.drogon.net/raspberry-pi/gertduino/" aria-haspopup="true">Gertduino</a><ul class="children"><li class="page_item page-item-1667"><a href="https://projects.drogon.net/raspberry-pi/gertduino/atmega-setup/">ATmega Setup</a></li></ul></li><li class="page_item page-item-219"><a href="https://projects.drogon.net/raspberry-pi/raspberry-pi-and-sdl/">Raspberry Pi and SDL</a></li><li class="page_item page-item-100"><a href="https://projects.drogon.net/raspberry-pi/initial-setup1/">Initial setup – 1: Secure, Re-Partition &amp; Swap</a></li><li class="page_item page-item-107"><a href="https://projects.drogon.net/raspberry-pi/initial-setup2/">Setup 2 – More tweaks to save precious RAM</a></li></ul></li><li class="page_item page-item-582"><a href="https://projects.drogon.net/pitrak/">PiTrak</a></li><li class="page_item page-item-25 page_item_has_children"><a href="https://projects.drogon.net/drogon-remote-control/" aria-haspopup="true">Drogon Remote Control</a><ul class="children"><li class="page_item page-item-46"><a href="https://projects.drogon.net/drogon-remote-control/drc-protocol-arduino/">DRC Protocol – Arduino</a></li><li class="page_item page-item-70"><a href="https://projects.drogon.net/drogon-remote-control/drc-downloads/">DRC | Downloads</a></li></ul></li><li class="page_item page-item-27"><a href="https://projects.drogon.net/dross/">DROSS</a></li><li class="page_item page-item-22 page_item_has_children"><a href="https://projects.drogon.net/rtb/" aria-haspopup="true">Return to Basics</a><ul class="children"><li class="page_item page-item-1833"><a href="https://projects.drogon.net/rtb/rtb-history/">History</a></li><li class="page_item page-item-1561"><a href="https://projects.drogon.net/rtb/overview/">Overview</a></li><li class="page_item page-item-956"><a href="https://projects.drogon.net/rtb/rtb-download-and-install/">Download and Install</a></li></ul></li><li class="page_item page-item-1173 page_item_has_children"><a href="https://projects.drogon.net/my-365/" aria-haspopup="true">My 365</a><ul class="children"><li class="page_item page-item-1165"><a href="https://projects.drogon.net/my-365/january-2013/">January 2013</a></li><li class="page_item page-item-1464"><a href="https://projects.drogon.net/my-365/february-2013/">February 2013</a></li><li class="page_item page-item-1483"><a href="https://projects.drogon.net/my-365/march-2013/">March 2013</a></li><li class="page_item page-item-1552"><a href="https://projects.drogon.net/my-365/april-2013/">April 2013</a></li></ul></li><li class="page_item page-item-612"><a href="https://projects.drogon.net/contact/">Contact</a></li><li class="page_item page-item-1786"><a href="https://projects.drogon.net/stem/">STEM</a></li></ul></div>
+		</nav></div><!-- #access --></div> <!-- #wrap-bottom-menu -->
+</div> <!-- #wrap-header -->
+	<div id="infobar">
+<span id="breadcrumbs"><span class="crumbs"><a href="https://projects.drogon.net/">Home</a>→<a href="https://projects.drogon.net/raspberry-pi/">Raspberry Pi</a>→<a href="https://projects.drogon.net/raspberry-pi/wiringpi/">WiringPi</a>→<span class="bcur-page">Special Pin Functions</span></span></span>	<span class="infobar_right">
+<span id="infobar_paginate"></span>
+	</span></div><div class="weaver-clear"></div><!-- #infobar -->
+	<div id="main">
+		<div id="container_wrap" class="container-page equal_height right-1-col">
+		<div id="container">
+
+			<div id="content" role="main">
+
+<article id="post-176" class="post-176 page type-page status-publish hentry content-page">
+	<header class="entry-header">
+		<h1 class="entry-title">Special Pin Functions</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content cf">
+<p style="text-align: justify;"><em><strong>WiringPi</strong></em> defines 17 pins, (21 on a Rev. 2 board) but some of them and the functions we can use may potentially cause problems with other parts of the Raspberry Pi Linux system.</p>
+<ul>
+<li style="text-align: justify;"><strong>Pins 0</strong> through<strong> 7</strong> (BCM_GPIO 17, 18,&nbsp; 21, 22, 23, 24, 25, 4 respectively, substitute 27 for 21 on a Rev. 2 board): These are safe to use at any time and can be set to input or output with or without the internal pull-up or pull-down resistors enabled.</li>
+</ul>
+<ul>
+<li style="text-align: justify;"><strong>PWM</strong>: You can change the function of pin 1 (BCM_GPIPO 18) to be PWM output, however if you are currently playing music or using the audio system via the 3.5mm jack socket, then you’ll find one channel of audio PWM coming through the pin! If you are not using the audio at all, (or the audio is going via the HDMI cable), then this pin is free to be used in PWM mode.</li>
+</ul>
+<ul>
+<li style="text-align: justify;"><strong>Pins 8</strong> and <strong>9</strong> (BCM GPIO 0 and 1 on a Rev. 1 board, 2 and 3 on a Rev. 2 board): These are the I2C pins. You may use them for digital IO if you are not using any I2C drivers which use these pins, however note that they have on-board 1.8KΩ resistors pulling the signals to the 3v3 supply. This feature does make them handy for switch inputs where the switch simply shorts the pin to ground without having to enable the internal pull-up resistors</li>
+</ul>
+<ul>
+<li style="text-align: justify;"><strong>Pins 10, 11, 12, 13</strong> and <strong>14</strong> (GPIO 8, 7, 10, 9 and 11 respectively): These are used for the SPI interface. Like the I2C interface, if you are not using it, then you can freely use them for your own purposes. Unlike I2C, these pins do not have any external pull up (or pull down) resistors.</li>
+</ul>
+<ul>
+<li style="text-align: justify;"><strong>Pins 15</strong> and <strong>16</strong> (GPIO 14 and 15): These are used by the UART for Tx and Rx respectively. If you want to use these pins as general purpose I/O pins then you need to make sure that you reboot your Pi with the serial console disabled. See the file <strong>/boot/cmdline.txt</strong> and edit it appropriately.</li>
+<li style="text-align: justify;"><strong>Pins 17</strong>, <strong>18</strong>, <strong>19</strong> and <strong>20</strong>: (BCM_GPIO 28, 29, 30 and 31) These are additional GPIO pins on the Rev. 2 board.</li>
+</ul>
+<h2 style="text-align: justify;">Remember: The Raspberry Pi is a <span style="text-decoration: underline;">3.3<strong> volt</strong></span> device! Attempting to connect to any 5V logic system will very likely result in tears…</h2>
+	</div><!-- .entry-content -->
+	<footer class="entry-utility-page cf">
+
+	</footer><!-- .entry-utility-page -->
+</article><!-- #post-176 -->
+	<div id="comments">
+
+		<hr class="comments-hr">
+		<header id="comments-title">
+		<h3>Comments</h3>
+				<h4>
+<em>Special Pin Functions</em> — 24 Comments		</h4>
+		</header>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-25">
+		<article id="comment-25" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/cefa4253f010eef3cfe5ac66cacb7e32" class="avatar avatar-40 photo" height="40" width="40"><span class="fn"><a href="http://n/a" rel="external nofollow" class="url">mmcv2008</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-25"><time datetime="2012-05-24T07:43:51+00:00">May 24, 2012 at 7:43 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Best and most useful info on how to use the Raspberry PI and how to access the I/O Header I found so far. maybe you elaborate also on how to use SPI, I2C and UART in that style. Thanks Gordan!</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=25#respond" onclick="return addComment.moveForm(&quot;comment-25&quot;, &quot;25&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-2" id="li-comment-28">
+		<article id="comment-28" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-28"><time datetime="2012-05-24T09:04:09+00:00">May 24, 2012 at 9:04 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>At present, there seems to be more than one driver for the I2C and SPI interfaces so rather then write my own (which I may still do), I’m waiting to see how these pan out. However the UART is fairly standard, so I can easilly include a page for that. Watch this space, as they say!</p>
+<p>-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=28#respond" onclick="return addComment.moveForm(&quot;comment-28&quot;, &quot;28&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-3" id="li-comment-146">
+		<article id="comment-146" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/33db9b723cc2d86bbcd32bef53304612" class="avatar avatar-32 photo" height="32" width="32"><span class="fn">anglergab</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-146"><time datetime="2012-07-06T15:59:35+00:00">July 6, 2012 at 3:59 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>For an RPi UART – PC RS232 connection can I use the MAX3232 IC with 4/5 capacitors?</p>
+<p>How can I connect a 5 V device to the UART (e. g. a PIC microcontroller)? The above mentioned IC can make this type of conversion, too?</p>
+<p>How can I send/receive data over UART with RPi (to/from PC or microcontroller)?</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=146#respond" onclick="return addComment.moveForm(&quot;comment-146&quot;, &quot;146&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-4" id="li-comment-147">
+		<article id="comment-147" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-147"><time datetime="2012-07-06T16:20:13+00:00">July 6, 2012 at 4:20 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Yes – just remember the Pi’s serial is 3.3v.</p>
+<p>For a simple 5V device, then a level convertor will work – e.g. this one:<br>
+    <a href="http://www.skpang.co.uk/catalog/logic-level-converter-p-511.html" rel="nofollow">http://www.skpang.co.uk/catalog/logic-level-converter-p-511.html</a></p>
+<p>The Pi is a Linux system, so any of the standard Linux serial IO code will work. If you need to look at human readable type output then a terminal program like minicom will be fine on the Pi. If you need a program to exchange data, then look at the wiringPi librarys I’ve written – there is a serial module in it which might help.</p>
+<p>-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=147#respond" onclick="return addComment.moveForm(&quot;comment-147&quot;, &quot;147&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-5" id="li-comment-148">
+		<article id="comment-148" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/33db9b723cc2d86bbcd32bef53304612" class="avatar avatar-32 photo" height="32" width="32"><span class="fn">anglergab</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-148"><time datetime="2012-07-06T16:35:05+00:00">July 6, 2012 at 4:35 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks!</p>
+<p>I plan to connect a PIC MC, which has a built-in Analog-to-Digital Converter. The PIC would send the measured data through UART to the Pi, which would store the values. Will a simple level convertor do for this?</p>
+<p>Sure, an I2C ADC IC could be used, but the Debian image doesn’t contain i2c support. <img src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/icon_sad.gif" alt=":(" class="wp-smiley"></p>
+</div>
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-5" id="li-comment-149">
+		<article id="comment-149" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-149"><time datetime="2012-07-06T16:42:23+00:00">July 6, 2012 at 4:42 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Yes, the level convertor I posted earlier should be fine.<br>
+There are I2C and SPI drivers in some of the later kernels, but they’re not in the mainstream releases yet though.<br>
+I’ve interfaced Arduinos to the Pi – but only using the USB serial to the Arduno. That worked well. e.g. see: <a href="http://unicorn.drogon.net/piduino.jpg" rel="nofollow">http://unicorn.drogon.net/piduino.jpg</a></p>
+<p>Another option might be to run the PIC at 3.3v if possible – I’m doing this with some ATmega chips, then they just directly connect to the Pi’s serial port.<br>
+-Gordon</p>
+</div>
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even depth-5" id="li-comment-150">
+		<article id="comment-150" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/33db9b723cc2d86bbcd32bef53304612" class="avatar avatar-32 photo" height="32" width="32"><span class="fn">anglergab</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-150"><time datetime="2012-07-06T16:56:53+00:00">July 6, 2012 at 4:56 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’ve got a PIC16LF876A. I think, that the ‘L’ in the name could mean that low-voltage capable model.<br>
+Could the Pi supply enough current through its 3.3 V line to the PIC or I’ll need an independent power supply?</p>
+<p>By the way, using an USB-serial converter cable, I can connect the PIC to one of Pi’s USB ports, too (of course, a TTL/RS232 “converter” is required). <img src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/icon_smile.gif" alt=":)" class="wp-smiley"></p>
+</div>
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-5" id="li-comment-151">
+		<article id="comment-151" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-151"><time datetime="2012-07-06T17:04:03+00:00">July 6, 2012 at 5:04 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>You can take about 50mA out of the 3.3v connector on the GPIO, so it might be enough…. You can take more out of the 5V connector – it’s shared with the rest of the board and limited by the 700mA polyfuse…</p>
+<p>-Gordon</p>
+</div>
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-154">
+		<article id="comment-154" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/33db9b723cc2d86bbcd32bef53304612(1)" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">anglergab</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-154"><time datetime="2012-07-06T21:25:13+00:00">July 6, 2012 at 9:25 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks!<br>
+Which drivers do we need for UART communication in Linux? E. g. to connect the Pi to other USB host-enabled embedded Linux devices (like some Android smartphones) via UART. Because my USB host-enabled Android smartphone doesn’t seem to recognize out of the box my USB-serial adapter cable.<br>
+Or support cannot be supplied through kernel objects, so custom built kernel is required?</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=154#respond" onclick="return addComment.moveForm(&quot;comment-154&quot;, &quot;154&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-2" id="li-comment-156">
+		<article id="comment-156" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-156"><time datetime="2012-07-06T23:04:26+00:00">July 6, 2012 at 11:04 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>The UART on the GPIO is a standard driver in the Linux kernel. It appears as /dev/ttyAMA0. Lookup any standard Linux serial handling code if you want to use it, but you might need to disable the kernel frpm printing messages to it (see /boot/cmdline.txt) and Linux from running a login process on it (see /etc/inittab).</p>
+<p>If you want some code to talk over it, then have a look at wiringPi – there are some serial access functions in that to talk to a remote device via a Linux serial port (the on-board UART, or a serial USB adapter)<br>
+-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=156#respond" onclick="return addComment.moveForm(&quot;comment-156&quot;, &quot;156&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-466">
+		<article id="comment-466" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/ca6463e3c49a50ed6dc32704e271ff18" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">Joan</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-466"><time datetime="2012-08-28T11:51:29+00:00">August 28, 2012 at 11:51 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hello, great information and help, thanks, I think there’s only a small error in “SPI pins 10,11,12,13 and 14 Pins (GPIO 8, 7, 10, 9 and 14 respectively)” 14 should be 11 SCLK</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=466#respond" onclick="return addComment.moveForm(&quot;comment-466&quot;, &quot;466&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-2" id="li-comment-468">
+		<article id="comment-468" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-468"><time datetime="2012-08-28T13:48:43+00:00">August 28, 2012 at 1:48 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi,<br>
+Well spotted.<br>
+Thanks!<br>
+-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=468#respond" onclick="return addComment.moveForm(&quot;comment-468&quot;, &quot;468&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1063">
+		<article id="comment-1063" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/53353b731b1a96fc41fe3b0429e92484" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">Bo-Erik</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-1063"><time datetime="2012-11-30T09:39:53+00:00">November 30, 2012 at 9:39 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Can you document the I2S pinouts and functionality for RPi V2 ?</p>
+<p>I am interested in finding information and pointers on how to use I2S interfaces on RPi.<br>
+According to information there is a possibility to configure for 3 I2S interfaces.<br>
+My hope is to find or inspire some one to describe and implement linux JACK drivers for at least 4 channels 24bit 48kHz (maybe 96KHz also)  ADC interface.<br>
+This would be a great step forward to create a digital recorder.</p>
+<p>Sadly most I2S users concentrate on DAC circuits.<br>
+– bosse</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=1063#respond" onclick="return addComment.moveForm(&quot;comment-1063&quot;, &quot;1063&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-2" id="li-comment-1064">
+		<article id="comment-1064" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-1064"><time datetime="2012-11-30T09:47:46+00:00">November 30, 2012 at 9:47 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’m afraid that I2S is something I know very little about so it’s not even on my radar to interface to. There have been a few posts on the Raspberry Pi forums though..</p>
+<p>-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=1064#respond" onclick="return addComment.moveForm(&quot;comment-1064&quot;, &quot;1064&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-1066">
+		<article id="comment-1066" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/d049723cd9ba4bd1afba191260effbd1" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">Kuprja</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-1066"><time datetime="2012-11-30T16:07:31+00:00">November 30, 2012 at 4:07 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Now I noticed that the program gpio 7 does not always work</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=1066#respond" onclick="return addComment.moveForm(&quot;comment-1066&quot;, &quot;1066&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1417">
+		<article id="comment-1417" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/d100668fe5469011f8b315781840615d" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">Rex</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-1417"><time datetime="2013-01-10T20:58:43+00:00">January 10, 2013 at 8:58 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Gordon,<br>
+Thank you for your excellent notes and examples.  From the Special Pin Functions above I understand that I could replace a simple circuit like the one shown at <a href="http://en.wikipedia.org/wiki/File:Pullup_Resistor.png" rel="nofollow">http://en.wikipedia.org/wiki/File:Pullup_Resistor.png</a> with the even simpler circuit of a wire running from pin 8 (SDA0, physical pin 3) to a switch and a wire running from the other side of the switch to ground (physical pin 6).  Is this correct?</p>
+<p>If it is correct, do I simply use gpio to configure pin 8 (SDA0) for input?  Do I need to do anything to cause it to use the 1k8 pull-up resistor?</p>
+<p>My goal is to connect a switch to pin 8 and ground and then use interrupts to detect the falling edge when the switch is closed.  Is this possible?</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=1417#respond" onclick="return addComment.moveForm(&quot;comment-1417&quot;, &quot;1417&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor even depth-2" id="li-comment-1418">
+		<article id="comment-1418" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-1418"><time datetime="2013-01-10T21:50:21+00:00">January 10, 2013 at 9:50 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Yes, it’s possible. Should be relatively easy too. The on-board pull-up will keep the pin biased high, you just need to make sure you don’t load the I2C kernel module (it’s not loaded by default though).</p>
+<p>-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=1418#respond" onclick="return addComment.moveForm(&quot;comment-1418&quot;, &quot;1418&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-2212">
+		<article id="comment-2212" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/9782b90fb30b510e43c90a0b3e355a49" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">winda</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-2212"><time datetime="2013-03-27T03:30:33+00:00">March 27, 2013 at 3:30 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi, nice share <img src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/icon_smile.gif" alt=":)" class="wp-smiley"><br>
+But, i want to ask u, where should I put my sensor Input/Output that use RX/TX? I use ultrasonic sensor SRF04.<br>
+Based on your explanation pin RX/TX is in GPIO 14 and 15. Is that GPIO 14 and 15 in pin 15 and 16? but in other source they write that RX/TX is in pin 8 and 10.<br>
+And what should I write on my python to access the RX/TX pin?<br>
+for example:<br>
+GPIO.setup(14, GPIO.OUT)<br>
+GPIO.setup(15, GPIO.IN)<br>
+or<br>
+GPIO.setup(15, GPIO.OUT)<br>
+GPIO.setup(16, GPIO.IN)</p>
+<p>sorry, i really need the explanation, because I still new with this raspberry.<br>
+thankyou so much Gordon. <img src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/icon_smile.gif" alt=":)" class="wp-smiley"></p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=2212#respond" onclick="return addComment.moveForm(&quot;comment-2212&quot;, &quot;2212&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor even depth-2" id="li-comment-2213">
+		<article id="comment-2213" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-2213"><time datetime="2013-03-27T07:19:21+00:00">March 27, 2013 at 7:19 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>GPIO.setup() is not one of my functions, and all my code is in C, not Python. You’d be better off asking in whatever forums/etc. of that particular software.</p>
+<p>However if you want to use the serial port, then you do not need to change any pin modes. If you do, then you take it out of serial mode and into GPIO mode.</p>
+<p>-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=2213#respond" onclick="return addComment.moveForm(&quot;comment-2213&quot;, &quot;2213&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-2231">
+		<article id="comment-2231" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/9782b90fb30b510e43c90a0b3e355a49(1)" class="avatar avatar-32 photo" height="32" width="32"><span class="fn">winda</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-2231"><time datetime="2013-03-28T02:17:32+00:00">March 28, 2013 at 2:17 am</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>ah..yaa.. i know, pin configuration is depend on what mode that i use to access the GPIO, right?<br>
+Thank u so much Gordon <img src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/icon_smile.gif" alt=":)" class="wp-smiley"></p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=2231#respond" onclick="return addComment.moveForm(&quot;comment-2231&quot;, &quot;2231&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2349">
+		<article id="comment-2349" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/e44e5575bb4a913584e33e31834342a0" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">spenner</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-2349"><time datetime="2013-04-16T17:44:39+00:00">April 16, 2013 at 5:44 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi Gordon,</p>
+<p>Great work!, I was wondering if you set the uart pins (Gpio 14/15) to an output or input, how do you change them back to Tx/Rx to use as uart again?</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=2349#respond" onclick="return addComment.moveForm(&quot;comment-2349&quot;, &quot;2349&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-2" id="li-comment-2351">
+		<article id="comment-2351" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-2351"><time datetime="2013-04-16T21:49:16+00:00">April 16, 2013 at 9:49 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Reboot the Pi.</p>
+<p>Probably not the answer you wanted, but it’s the easiest way.</p>
+<p>I have considered putting some extra stuff into the GPIO program to do things like this though – wondering how often it might be used though… ?</p>
+<p>-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=2351#respond" onclick="return addComment.moveForm(&quot;comment-2351&quot;, &quot;2351&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-2848">
+		<article id="comment-2848" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/eb79bccbacc0b3bdd8a0bdc2eca0265f" class="avatar avatar-40 photo" height="40" width="40"><span class="fn">Ashwinth</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-2848"><time datetime="2013-08-06T20:03:17+00:00">August 6, 2013 at 8:03 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hi, I am trying to connect atmega 8 which used 5v to raspberry pi and am having some problem with voltage.. I made a daugther board for raspberry pi, which job is to supply 5v to raspberry pi and connect SDA and SCL signals.. I connected a I2c bus to atmega circuit.. So when i connect atmega8 to daugther board, the current will be directly be supplied to atmega from daughter without involving raspberry pi, but the SDA and SCL pins are connected to raspberry pi.. Do i need any converter in this case ?</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=2848#respond" onclick="return addComment.moveForm(&quot;comment-2848&quot;, &quot;2848&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-gordon bypostauthor odd alt depth-2" id="li-comment-2849">
+		<article id="comment-2849" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+<img alt="" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/fb2bb9299dc8bc5223ea0cead8e074af" class="avatar avatar-32 photo" height="32" width="32"><span class="fn"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#comment-2849"><time datetime="2013-08-06T20:14:41+00:00">August 6, 2013 at 8:14 pm</time></a> <span class="says">said:</span>
+				</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Use serial, not I2C. Get I2C wrong on the ATmega and you’ll crash the Pi.</p>
+<p>Using serial you’ll need a resistor divider to take the 5v serial from the ATmega to the Pi, but the other way will be OK.</p>
+<p>If you want to continue using I2C (why?) then you will probably get away with not using any converters as it’s a pull-down bus and the Pi keeps it at 3.3v (do not enable the pull-ups on the Atmega). To do it properly, you need a pair of MOSFETs running as level converters. See e.g. <a href="http://www.flickr.com/photos/linux-works/6433044007/" rel="nofollow">http://www.flickr.com/photos/linux-works/6433044007/</a></p>
+<p>But really – dump I2C. it’s not fast, complex to program and prone to crashing the Pi if you get it wrong. I’ve just finished a project involving an ATmega talking to a Pi via I2C and never plan to do another.</p>
+<p>-Gordon</p>
+</div>
+			<div class="reply">
+				<a class="comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/?replytocom=2849#respond" onclick="return addComment.moveForm(&quot;comment-2849&quot;, &quot;2849&quot;, &quot;respond&quot;, &quot;176&quot;)">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol>
+
+		
+									<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="https://projects.drogon.net/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="176" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						
+	<p class="comment-form-ant-spm" style="clear: both; display: none;">
+		<strong>Current ye@r</strong> <span class="required">*</span>
+		<input type="hidden" name="ant-spm-a" id="ant-spm-a" value="2014">
+		<input type="text" name="ant-spm-q" id="ant-spm-q" size="30" value="2.2">
+	</p>
+	
+	<p class="comment-form-ant-spm-2" style="display: none;">
+		<strong>Leave this field empty</strong>
+		<input type="text" name="ant-spm-e-email-url" id="ant-spm-e-email-url" size="30" value="">
+	</p>
+						</form>
+							</div><!-- #respond -->
+			</div><!-- #comments -->
+			</div><!-- #content -->
+		</div><!-- #container -->
+		</div><!-- #container_wrap -->
+
+	<div id="sidebar_wrap_right" class="right-1-col equal_height">
+	<div id="sidebar_primary" class="widget-area weaver-clear" role="complementary">
+<aside id="search-2" class="widget widget_search"><form role="search" style="background:transparent;" method="get" class="searchform" action="https://projects.drogon.net/">
+	<label class="screen-reader-text" for="s">Search for:</label>
+	<input type="search" value="" name="s" id="s" placeholder="Search Site">
+	<input class="searchformimg" type="image" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/search_button.gif" alt="Search">
+	</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="https://projects.drogon.net/and-on-the-49th-day-it-stopped/">And on the 49th day, it stopped…</a>
+							<span class="post-date">July 22, 2014</span>
+						</li>
+					<li>
+				<a href="https://projects.drogon.net/testing-setting-the-usb-current-limiter-on-the-raspberry-pi-b/">Testing &amp; Setting the USB current limiter on the Raspberry Pi B+</a>
+							<span class="post-date">July 14, 2014</span>
+						</li>
+					<li>
+				<a href="https://projects.drogon.net/a-quick-look-at-the-new-raspberry-pi-model-b/">A quick look at the new Raspberry Pi model B+</a>
+							<span class="post-date">July 14, 2014</span>
+						</li>
+					<li>
+				<a href="https://projects.drogon.net/lmc/">LMC – The Little Man Computer on the Raspberry Pi</a>
+							<span class="post-date">May 15, 2014</span>
+						</li>
+					<li>
+				<a href="https://projects.drogon.net/a-visit-to-the-center-for-computing-history/">A Visit to the Center for Computing History</a>
+							<span class="post-date">May 11, 2014</span>
+						</li>
+					<li>
+				<a href="https://projects.drogon.net/basic-is-50/">BASIC is 50</a>
+							<span class="post-date">April 29, 2014</span>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Nick B</span> on <a href="https://projects.drogon.net/a-quick-look-at-the-new-raspberry-pi-model-b/#comment-3614">A quick look at the new Raspberry Pi model B+</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/#comment-3543">Download and Install</a></li><li class="recentcomments"><span class="comment-author-link">Mae</span> on <a href="https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/#comment-3542">Download and Install</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://retroprogramming.com/" rel="external nofollow" class="url">John</a></span> on <a href="https://projects.drogon.net/a-visit-to-the-center-for-computing-history/#comment-3541">A Visit to the Center for Computing History</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://drogon.net/" rel="external nofollow" class="url">Gordon</a></span> on <a href="https://projects.drogon.net/basic-is-50/#comment-3534">BASIC is 50</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			<option value="">Select Month</option>
+
+				<option value="https://projects.drogon.net/2014/07/"> July 2014 </option>
+	<option value="https://projects.drogon.net/2014/05/"> May 2014 </option>
+	<option value="https://projects.drogon.net/2014/04/"> April 2014 </option>
+	<option value="https://projects.drogon.net/2014/03/"> March 2014 </option>
+	<option value="https://projects.drogon.net/2013/11/"> November 2013 </option>
+	<option value="https://projects.drogon.net/2013/08/"> August 2013 </option>
+	<option value="https://projects.drogon.net/2013/07/"> July 2013 </option>
+	<option value="https://projects.drogon.net/2013/05/"> May 2013 </option>
+	<option value="https://projects.drogon.net/2013/04/"> April 2013 </option>
+	<option value="https://projects.drogon.net/2013/03/"> March 2013 </option>
+	<option value="https://projects.drogon.net/2013/02/"> February 2013 </option>
+	<option value="https://projects.drogon.net/2013/01/"> January 2013 </option>
+	<option value="https://projects.drogon.net/2012/12/"> December 2012 </option>
+	<option value="https://projects.drogon.net/2012/11/"> November 2012 </option>
+	<option value="https://projects.drogon.net/2012/10/"> October 2012 </option>
+	<option value="https://projects.drogon.net/2012/09/"> September 2012 </option>
+	<option value="https://projects.drogon.net/2012/08/"> August 2012 </option>
+	<option value="https://projects.drogon.net/2012/07/"> July 2012 </option>
+	<option value="https://projects.drogon.net/2012/06/"> June 2012 </option>
+	<option value="https://projects.drogon.net/2012/05/"> May 2012 </option>
+	<option value="https://projects.drogon.net/2012/04/"> April 2012 </option>
+	<option value="https://projects.drogon.net/2012/03/"> March 2012 </option>
+		</select>
+</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name="cat" id="cat" class="postform">
+	<option value="-1">Select Category</option>
+	<option class="level-0" value="98">4D Systems&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="8">Arduino&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="10">BASIC&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="26">Cooking&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="61">Game&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="6">General Update&nbsp;&nbsp;(43)</option>
+	<option class="level-0" value="67">Internet&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="16">Out and About&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="66">PCB&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="122">Pimoroni&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="90">Quick2Wire&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="15">Raspberry Pi&nbsp;&nbsp;(50)</option>
+	<option class="level-1" value="63">&nbsp;&nbsp;&nbsp;wiringPi&nbsp;&nbsp;(22)</option>
+	<option class="level-0" value="126">Techcamp&nbsp;&nbsp;(1)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "https://projects.drogon.net/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="linkcat-28" class="widget widget_links"><h3 class="widget-title">Electronics, etc. Shops</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.4dsystems.com.au/" rel="contact" title="4D Systems – Intelligent Display Modules" target="_blank">4D Systems</a></li>
+<li><a href="http://www.adafruit.com/" title="Adafruit – DIY electronics and kits">Adafruit</a></li>
+<li><a href="http://www.pimoroni.com/" title="Makes of the PiBow case for the Raspperry Pi and much more!" target="_blank">Pimoroni</a></li>
+<li><a href="http://www.skpang.co.uk/catalog/index.php" title="SK Pang Electronics" target="_blank">SK Pang</a></li>
+<li><a href="http://www.tandyonline.co.uk/" title="Tandy" target="_blank">Tandy</a></li>
+
+	</ul>
+</aside>
+<aside id="linkcat-136" class="widget widget_links"><h3 class="widget-title">Food</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.theartisanbakeryschool.com/" rel="contact met" title="The Artisan Bakery School, Sparkwell, Devon" target="_blank">Artisan Bakery School</a></li>
+<li><a href="http://moorbakes.co.uk/" rel="me" title="Moorbakes – Cupcakes, bread and more!" target="_blank">Moor Bakes</a></li>
+
+	</ul>
+</aside>
+<aside id="linkcat-7" class="widget widget_links"><h3 class="widget-title">People</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://teachcomputing.wordpress.com/" title="Teach Computing" target="_blank">Alan O'Donohoe</a></li>
+<li><a href="http://www.sueblack.co.uk/">Dr. Sue Black</a></li>
+<li><a href="http://www.fenlogic.com/" rel="contact" target="_blank">Gert van Loo</a></li>
+<li><a href="http://about.me/lespounder" rel="contact" title="Podcaster, Writer, Event Organiser, and Free Software / Linux Advocate" target="_blank">Les Pounder</a></li>
+<li><a href="https://plus.google.com/112465172480483098623/posts">Romilly Cocking</a></li>
+
+	</ul>
+</aside>
+<aside id="linkcat-15" class="widget widget_links"><h3 class="widget-title">Raspberry Pi</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.codingclub.co.uk/" rel="contact met" title="Learn Python – for young people &amp; teachers!" target="_blank">Coding Club</a></li>
+<li><a href="http://www.pimoroni.com/" title="Makes of the PiBow case for the Raspperry Pi and much more!" target="_blank">Pimoroni</a></li>
+<li><a href="http://codeandlife.com/2012/07/01/raspberry-pi-serial-console-with-max3232cpe/" title="Making the 3.3v serial on the Pi “proper” RS232" target="_blank">Serial Console</a></li>
+<li><a href="http://www.themagpi.com/" title="The MagPi Magazine">The MagPi Magazine</a></li>
+<li><a href="http://tech2077.blogspot.co.uk/2012/07/adding-ftdi-chip-to-raspberry-pi.html" title="Making the 3.3v serial on the Pi accessible via USB/FDTI" target="_blank">USB Console</a></li>
+
+	</ul>
+</aside>
+<aside id="linkcat-2" class="widget widget_links"><h3 class="widget-title">Sites of Interest</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.4dsystems.com.au/" rel="contact" title="4D Systems – Intelligent Display Modules" target="_blank">4D Systems</a></li>
+<li><a href="http://drogon.net/" rel="me" title="Drogon Systems" target="_blank">Drogon Systems</a></li>
+<li><a href="http://sites.google.com/site/libby8dev/fignition" rel="met" title="FIGNition – Forth" target="_blank">Fignition</a></li>
+<li><a href="http://madlab.org.uk/" rel="met" title="Madlab in Manchester" target="_blank">Madlab</a></li>
+<li><a href="http://quick2wire.com/">Quick2Wire</a></li>
+<li><a href="http://www.raspberrypi.org/">Raspberry Pi</a></li>
+<li><a href="http://gotofdn.org/">The &lt;goto&gt; foundation</a></li>
+<li><a href="http://zuzebox.wordpress.com/" title="The Zuzebox blog">The Zuzebox blog</a></li>
+
+	</ul>
+</aside>
+<aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="https://projects.drogon.net/wp-login.php">Log in</a></li>
+			<li><a href="https://projects.drogon.net/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://projects.drogon.net/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3><div class="tagcloud"><a href="https://projects.drogon.net/tag/4d-systems/" class="tag-link-84" title="2 topics" style="font-size: 9.96875pt;">4d systems</a>
+<a href="https://projects.drogon.net/tag/7-segment/" class="tag-link-36" title="1 topic" style="font-size: 8pt;">7 segment</a>
+<a href="https://projects.drogon.net/tag/30/" class="tag-link-11" title="1 topic" style="font-size: 8pt;">30</a>
+<a href="https://projects.drogon.net/tag/200/" class="tag-link-40" title="1 topic" style="font-size: 8pt;">200</a>
+<a href="https://projects.drogon.net/tag/adafruit/" class="tag-link-58" title="2 topics" style="font-size: 9.96875pt;">adafruit</a>
+<a href="https://projects.drogon.net/tag/arduino/" class="tag-link-8" title="5 topics" style="font-size: 13.25pt;">Arduino</a>
+<a href="https://projects.drogon.net/tag/basic/" class="tag-link-10" title="6 topics" style="font-size: 14.015625pt;">BASIC</a>
+<a href="https://projects.drogon.net/tag/bread/" class="tag-link-114" title="2 topics" style="font-size: 9.96875pt;">bread</a>
+<a href="https://projects.drogon.net/tag/bug/" class="tag-link-32" title="1 topic" style="font-size: 8pt;">bug</a>
+<a href="https://projects.drogon.net/tag/c/" class="tag-link-44" title="3 topics" style="font-size: 11.28125pt;">c</a>
+<a href="https://projects.drogon.net/tag/computing/" class="tag-link-76" title="2 topics" style="font-size: 9.96875pt;">computing</a>
+<a href="https://projects.drogon.net/tag/delay/" class="tag-link-48" title="1 topic" style="font-size: 8pt;">delay</a>
+<a href="https://projects.drogon.net/tag/difference/" class="tag-link-13" title="1 topic" style="font-size: 8pt;">difference</a>
+<a href="https://projects.drogon.net/tag/display/" class="tag-link-37" title="2 topics" style="font-size: 9.96875pt;">display</a>
+<a href="https://projects.drogon.net/tag/drc/" class="tag-link-9" title="2 topics" style="font-size: 9.96875pt;">DRC</a>
+<a href="https://projects.drogon.net/tag/dtronixs/" class="tag-link-41" title="1 topic" style="font-size: 8pt;">dtronixs</a>
+<a href="https://projects.drogon.net/tag/examples/" class="tag-link-30" title="1 topic" style="font-size: 8pt;">examples</a>
+<a href="https://projects.drogon.net/tag/features/" class="tag-link-33" title="1 topic" style="font-size: 8pt;">features</a>
+<a href="https://projects.drogon.net/tag/fun/" class="tag-link-29" title="1 topic" style="font-size: 8pt;">fun</a>
+<a href="https://projects.drogon.net/tag/gpio/" class="tag-link-25" title="25 topics" style="font-size: 20.140625pt;">GPIO</a>
+<a href="https://projects.drogon.net/tag/i2c/" class="tag-link-92" title="2 topics" style="font-size: 9.96875pt;">I2C</a>
+<a href="https://projects.drogon.net/tag/interfacing/" class="tag-link-45" title="1 topic" style="font-size: 8pt;">interfacing</a>
+<a href="https://projects.drogon.net/tag/interpreter/" class="tag-link-82" title="2 topics" style="font-size: 9.96875pt;">interpreter</a>
+<a href="https://projects.drogon.net/tag/jamboree/" class="tag-link-100" title="3 topics" style="font-size: 11.28125pt;">jamboree</a>
+<a href="https://projects.drogon.net/tag/joystick/" class="tag-link-47" title="1 topic" style="font-size: 8pt;">joystick</a>
+<a href="https://projects.drogon.net/tag/ladder-game/" class="tag-link-31" title="1 topic" style="font-size: 8pt;">ladder game</a>
+<a href="https://projects.drogon.net/tag/lcd/" class="tag-link-85" title="2 topics" style="font-size: 9.96875pt;">lcd</a>
+<a href="https://projects.drogon.net/tag/ldc/" class="tag-link-35" title="1 topic" style="font-size: 8pt;">ldc</a>
+<a href="https://projects.drogon.net/tag/madlab/" class="tag-link-19" title="1 topic" style="font-size: 8pt;">madlab</a>
+<a href="https://projects.drogon.net/tag/manchester/" class="tag-link-101" title="2 topics" style="font-size: 9.96875pt;">manchester</a>
+<a href="https://projects.drogon.net/tag/meiko/" class="tag-link-38" title="1 topic" style="font-size: 8pt;">meiko</a>
+<a href="https://projects.drogon.net/tag/mini-piio/" class="tag-link-42" title="1 topic" style="font-size: 8pt;">mini piio</a>
+<a href="https://projects.drogon.net/tag/museum/" class="tag-link-75" title="2 topics" style="font-size: 9.96875pt;">museum</a>
+<a href="https://projects.drogon.net/tag/nes/" class="tag-link-46" title="1 topic" style="font-size: 8pt;">nes</a>
+<a href="https://projects.drogon.net/tag/pimoroni-2/" class="tag-link-123" title="2 topics" style="font-size: 9.96875pt;">pimoroni</a>
+<a href="https://projects.drogon.net/tag/raspberry-pi-2/" class="tag-link-18" title="37 topics" style="font-size: 22pt;">raspberry pi</a>
+<a href="https://projects.drogon.net/tag/rtb/" class="tag-link-73" title="3 topics" style="font-size: 11.28125pt;">rtb</a>
+<a href="https://projects.drogon.net/tag/speed/" class="tag-link-14" title="1 topic" style="font-size: 8pt;">speed</a>
+<a href="https://projects.drogon.net/tag/supercomputer/" class="tag-link-39" title="1 topic" style="font-size: 8pt;">supercomputer</a>
+<a href="https://projects.drogon.net/tag/touchscreen/" class="tag-link-86" title="2 topics" style="font-size: 9.96875pt;">touchscreen</a>
+<a href="https://projects.drogon.net/tag/training/" class="tag-link-43" title="1 topic" style="font-size: 8pt;">training</a>
+<a href="https://projects.drogon.net/tag/ucubed/" class="tag-link-17" title="1 topic" style="font-size: 8pt;">ucubed</a>
+<a href="https://projects.drogon.net/tag/update/" class="tag-link-27" title="1 topic" style="font-size: 8pt;">update</a>
+<a href="https://projects.drogon.net/tag/wiringpi/" class="tag-link-20" title="24 topics" style="font-size: 20.03125pt;">WiringPi</a>
+<a href="https://projects.drogon.net/tag/years/" class="tag-link-12" title="1 topic" style="font-size: 8pt;">years</a></div>
+</aside><aside id="calendar-2" class="widget widget_calendar"><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>November 2014</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://projects.drogon.net/2014/07/">« Jul</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td id="today">24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	</tbody>
+	</table></div></aside><aside id="text-3" class="widget widget_text"><h3 class="widget-title">Raspberry Pi®</h3>			<div class="textwidget"><p style="text-align: justify;"><b>Raspberry Pi</b> and the associated Logo are trademarks of <a href="http://www.raspberrypi.org/">The Raspberry Pi Foundation</a> The name and logo are used throughout this site and their trademarked status is acknowledged here.</p>
+</div>
+		</aside><aside id="text-2" class="widget widget_text"><h3 class="widget-title">Cookies</h3>			<div class="textwidget"><p style="text-align: justify;">This site is written using Wordpress and to make it operate, Wordpress sets 2 session cookes by default. These are temporary cookies which should only be held in the memory of your browser and be deleted when you shutdown the browser or reboot your computer.</p>
+</div>
+		</aside>	</div><!-- #sidebar_primary .widget-area -->
+	</div><!-- #sidebar_wrap_right -->
+    <div class="weaver-clear"></div></div><!-- #main -->
+	<footer id="colophon" role="contentinfo">
+	  <div>
+
+	<div id="sidebar_wrap_footer" class="one">
+	<div class="widget-in-footer"><div id="first" class="widget-area" role="complementary">
+		<aside id="text-4" class="widget widget_text"><h3 class="widget-title">Copyright</h3>			<div class="textwidget">All content copyright © 2012-2014 Gordon Henderson</div>
+		</aside>	</div></div><!-- #first .widget-area -->
+	
+	
+			</div><!-- #sidebar_wrap_footer -->
+		<div id="site-ig-wrap">
+		<span id="site-info">
+		© 2014 - <a href="https://projects.drogon.net/" title="Gordons Projects" rel="home">Gordons Projects</a>
+		</span> <!-- #site-info -->
+		<span id="site-generator">
+		<a href="http://wordpress.org/" title="wordpress.org" rel="generator" target="_blank">Proudly powered by WordPress</a>&nbsp;
+Weaver II by <a href="http://weavertheme.com/" target="_blank" title="http://weavertheme.com">WP Weaver</a>
+		</span> <!-- #site-generator -->
+		</div><!-- #site-ig-wrap -->
+		<div class="weaver-clear"></div>
+	  </div>
+	</footer><!-- #colophon -->
+</div><!-- #wrapper -->
+<a href="https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/#page-top" id="page-bottom">↑</a>
+<div id="weaver-final" class="weaver-final-normal"><script type="text/javascript" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/comment-reply.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var weaver_menu_params = {"selector":"li:has(ul) > a","selector_leaf":"li li li:not(:has(ul)) > a"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Raspberry Pi   Wiring   Special Pin Functions   Gordons Projects_files/weaverjslib.min.js"></script>
+</div> <!-- #weaver-final -->
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>
